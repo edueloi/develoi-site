@@ -1,21 +1,22 @@
 
 import React from 'react';
 import { 
-  Heart, 
-  Smartphone, 
-  MessageCircle,
-  Layout as LayoutIcon,
-  Users,
-  Check,
-  Star,
-  ArrowRight,
-  Sparkles,
+  ArrowRight, 
+  Sparkles, 
+  Rocket, 
+  Lock, 
+  ShieldAlert, 
+  Code2, 
+  Activity, 
+  MessageCircle, 
+  Server, 
+  CloudLightning, 
+  ShieldCheck, 
   Zap,
-  ShieldCheck,
-  Code2,
-  Trophy
+  Globe,
+  Cpu
 } from 'lucide-react';
-import { COMPANY_STATS } from '../constants';
+import { COMPANY_STATS, TECHNICAL_CAPABILITIES, DEVELOI_PROJECTS } from '../constants';
 
 interface Props {
   onNavigate: (page: string) => void;
@@ -23,182 +24,146 @@ interface Props {
 
 const Home: React.FC<Props> = ({ onNavigate }) => {
   return (
-    <div className="pt-24 pb-20">
-      {/* HERO SECTION - REESTRUTURADA */}
-      <section className="max-w-7xl mx-auto px-6 py-20 md:py-32 flex flex-col items-center text-center">
-        <div className="reveal inline-flex items-center gap-2 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-10 border border-indigo-100 dark:border-indigo-500/20">
-          <Sparkles className="w-4 h-4 animate-pulse" />
-          <span>Transformando o Simples em Extraordinário</span>
+    <div className="pt-24 pb-0">
+      {/* HERO SECTION */}
+      <section className="max-w-7xl mx-auto px-6 py-20 md:py-40 flex flex-col items-center text-center relative overflow-hidden">
+        <div className="reveal inline-flex items-center gap-2 bg-indigo-600/5 text-indigo-600 dark:text-indigo-400 px-6 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-[0.3em] mb-12 border border-indigo-600/10 backdrop-blur-md">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>The Next Generation of Software</span>
         </div>
         
-        <h1 className="reveal text-5xl md:text-8xl font-black mb-10 tracking-tighter leading-[0.9] max-w-5xl">
-          Tecnologia de ponta <br />
-          <span className="text-gradient">para quem faz acontecer.</span>
+        <h1 className="reveal text-5xl md:text-[110px] font-black mb-10 tracking-[-0.05em] leading-[0.9] max-w-6xl text-slate-900 dark:text-white">
+          Construindo o <br />
+          <span className="text-gradient">Futuro Digital.</span>
         </h1>
         
         <p className="reveal text-lg md:text-2xl text-slate-500 dark:text-slate-400 mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
-          Ajudamos você a automatizar seu negócio com sites, apps e sistemas inteligentes. Design moderno, custo justo e suporte de verdade.
+          Engenharia de elite para empresas que buscam liderança. 
+          Interfaces de luxo e automações que escalam seu negócio.
         </p>
         
         <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-6">
           <button 
             onClick={() => onNavigate('contact')}
-            className="btn-modern w-full sm:w-auto"
+            className="btn-premium w-full sm:w-auto text-base shadow-2xl shadow-indigo-600/30"
           >
-            Começar meu projeto
+            Iniciar meu projeto
             <ArrowRight className="w-5 h-5" />
           </button>
           <button 
             onClick={() => onNavigate('solutions')}
-            className="w-full sm:w-auto px-10 py-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 font-black hover:bg-slate-50 dark:hover:bg-slate-900 transition-all flex items-center justify-center gap-3"
+            className="w-full sm:w-auto px-10 py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 font-black hover:bg-slate-50 dark:hover:bg-slate-900 transition-all flex items-center justify-center gap-3 text-base"
           >
-            Conhecer nosso trabalho
+            Portfólio 2025
           </button>
         </div>
       </section>
 
-      {/* STATS BENTO GRID - MAIS DADOS */}
-      <section className="max-w-7xl mx-auto px-6 mb-40">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="reveal modern-card p-10 md:col-span-2 bg-gradient-to-br from-indigo-600 to-blue-700 text-white border-none flex flex-col justify-between overflow-hidden relative">
-            <Zap className="absolute -right-10 -bottom-10 w-64 h-64 text-white/10 rotate-12" />
+      {/* BENTO GRID */}
+      <section className="max-w-7xl mx-auto px-6 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="reveal md:col-span-8 modern-card p-10 md:p-16 bg-slate-900 text-white border-none flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/10 blur-[100px] rounded-full group-hover:bg-indigo-500/20 transition-all"></div>
             <div className="relative z-10">
-              <Trophy className="w-10 h-10 mb-6 text-yellow-300" />
-              <div className="text-6xl font-black mb-2">124+</div>
-              <div className="text-xl font-bold opacity-90">Projetos entregues com perfeição</div>
-              <p className="mt-4 text-sm opacity-70 max-w-xs font-medium">Sistemas industriais, clínicos e portais de alta performance que geram resultados reais todos os dias.</p>
-            </div>
-            <div className="mt-8 flex -space-x-3">
-              {[1,2,3,4,5].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-indigo-600 bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-900">
-                  {String.fromCharCode(64 + i)}
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-white/10 rounded-xl backdrop-blur-md">
+                  <Rocket className="w-6 h-6 text-indigo-400" />
                 </div>
-              ))}
-              <div className="w-10 h-10 rounded-full border-2 border-indigo-600 bg-white/20 backdrop-blur-md flex items-center justify-center text-[10px] font-bold">
-                +80
-              </div>
-            </div>
-          </div>
-
-          <div className="reveal modern-card p-10 flex flex-col justify-center text-center" style={{transitionDelay: '0.1s'}}>
-            <div className="text-5xl font-black text-indigo-600 mb-2">98%</div>
-            <div className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Aprovação</div>
-            <div className="flex justify-center gap-1 text-yellow-400 mb-2">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-            </div>
-            <p className="text-xs font-medium text-slate-500">Clientes que recomendam nosso suporte humano e técnico.</p>
-          </div>
-
-          <div className="reveal modern-card p-10 flex flex-col justify-center text-center" style={{transitionDelay: '0.2s'}}>
-            <div className="text-5xl font-black text-emerald-500 mb-2">24/7</div>
-            <div className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Sempre Online</div>
-            <div className="w-16 h-1 bg-emerald-100 dark:bg-emerald-500/20 mx-auto rounded-full mb-4"></div>
-            <p className="text-xs font-medium text-slate-500">Monitoramento ativo para que seu sistema nunca pare de vender.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US - MAIS INFO */}
-      <section className="max-w-7xl mx-auto px-6 mb-40">
-        <div className="text-center mb-24 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">Por que escolher a Develoi?</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg">Unimos a robustez da engenharia com a leveza do design moderno.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            {
-              icon: <ShieldCheck className="w-8 h-8 text-blue-500" />,
-              title: "Segurança Total",
-              desc: "Seus dados protegidos com criptografia de última geração e conformidade total com a LGPD."
-            },
-            {
-              icon: <Code2 className="w-8 h-8 text-indigo-500" />,
-              title: "Código Limpo",
-              desc: "Sistemas fáceis de manter e que crescem junto com o seu negócio, sem gambiarras."
-            },
-            {
-              icon: <Heart className="w-8 h-8 text-pink-500" />,
-              title: "Suporte Amigo",
-              desc: "Aqui você não fala com robôs. Temos uma equipe de especialistas pronta para te ouvir."
-            }
-          ].map((item, i) => (
-            <div key={i} className="reveal group p-2" style={{transitionDelay: `${i * 0.1}s`}}>
-              <div className="modern-card p-12 h-full flex flex-col items-center text-center hover:border-indigo-500/50">
-                <div className="w-20 h-20 bg-slate-50 dark:bg-slate-900 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  {item.icon}
+                <div>
+                  <h3 className="text-2xl font-black">Escalabilidade Radical</h3>
+                  <p className="opacity-50 text-xs font-medium uppercase tracking-widest">Cloud-Native Architecture</p>
                 </div>
-                <h3 className="text-2xl font-black mb-4">{item.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-medium">{item.desc}</p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* NEW: TECH STACK SHOWCASE */}
-      <section className="bg-slate-50 dark:bg-slate-900/40 py-32 mb-40">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-20">
-            <div className="flex-1 reveal">
-              <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-tight">
-                Construímos com o que há de <span className="text-indigo-600">melhor no mundo.</span>
-              </h2>
-              <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed font-medium">
-                Não usamos ferramentas ultrapassadas. Utilizamos tecnologias que garantem que seu site seja rápido como um raio e seguro como um cofre.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                {['React & Next.js', 'Node.js', 'Google Cloud', 'AWS', 'Flutter', 'Python IA'].map(tech => (
-                  <div key={tech} className="flex items-center gap-3 font-bold text-slate-700 dark:text-slate-300">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                    {tech}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {COMPANY_STATS.map((s, i) => (
+                  <div key={i}>
+                    <div className="text-3xl md:text-4xl font-black mb-1">{s.value}</div>
+                    <div className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-0.5">{s.label}</div>
+                    <div className="text-[8px] font-bold opacity-30">{s.sub}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex-1 grid grid-cols-2 gap-6 reveal" style={{transitionDelay: '0.2s'}}>
-              <div className="modern-card p-10 flex flex-col items-center justify-center aspect-square gap-4">
-                <Smartphone className="w-12 h-12 text-indigo-500" />
-                <span className="font-black text-center text-sm">Apps Mobile</span>
-              </div>
-              <div className="modern-card p-10 flex flex-col items-center justify-center aspect-square gap-4 translate-y-12">
-                <LayoutIcon className="w-12 h-12 text-blue-500" />
-                <span className="font-black text-center text-sm">Sistemas Web</span>
-              </div>
-              <div className="modern-card p-10 flex flex-col items-center justify-center aspect-square gap-4">
-                <MessageCircle className="w-12 h-12 text-emerald-500" />
-                <span className="font-black text-center text-sm">Bots Whats</span>
-              </div>
-              <div className="modern-card p-10 flex flex-col items-center justify-center aspect-square gap-4 translate-y-12">
-                <ShieldCheck className="w-12 h-12 text-purple-500" />
-                <span className="font-black text-center text-sm">Segurança</span>
-              </div>
+            <div className="mt-12 pt-8 border-t border-white/5 flex flex-wrap gap-3 relative z-10">
+              {['Auto-Scaling', 'CI/CD', 'Microservices', 'Kubernetes'].map(t => (
+                <span key={t} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[8px] font-black uppercase tracking-widest">{t}</span>
+              ))}
             </div>
+          </div>
+
+          <div className="reveal md:col-span-4 modern-card p-10 flex flex-col items-center text-center justify-center bg-indigo-600 text-white border-none">
+            <div className="relative mb-6">
+                <Lock className="w-12 h-12 text-indigo-200" />
+                <ShieldAlert className="absolute -top-1 -right-1 w-6 h-6 text-white animate-pulse" />
+            </div>
+            <h3 className="text-3xl font-black mb-3">Security First</h3>
+            <p className="opacity-80 text-sm font-medium leading-relaxed">
+              Criptografia AES-256 e conformidade total com LGPD.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA - MAIS IMPACTANTE */}
-      <section className="max-w-6xl mx-auto px-6 text-center reveal">
-        <div className="modern-card p-16 md:p-24 bg-gradient-to-br from-slate-900 to-indigo-950 text-white border-none relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-             <div className="absolute top-10 left-10 w-64 h-64 bg-indigo-500 blur-[120px] rounded-full"></div>
-             <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-500 blur-[120px] rounded-full"></div>
+      {/* CASES SECTION - FIXED CONTRAST */}
+      <section className="bg-slate-50 dark:bg-slate-900/90 py-32 mb-32 border-y border-slate-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="max-w-2xl reveal">
+              <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900 dark:text-white leading-tight">
+                Cases de <span className="text-indigo-600">Alta Performance.</span>
+              </h2>
+              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                Construímos os sistemas que rodam o core de empresas vitoriosas.
+              </p>
+            </div>
+            <button 
+              onClick={() => onNavigate('solutions')}
+              className="reveal flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] group text-slate-900 dark:text-white"
+            >
+              Ver todos os projetos
+              <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-all">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </button>
           </div>
-          
-          <Heart className="w-16 h-16 mx-auto mb-10 text-pink-500 animate-pulse relative z-10" />
-          <h2 className="text-5xl md:text-7xl font-black mb-10 tracking-tighter leading-none relative z-10">
-            Vamos crescer <br />seu negócio juntos?
-          </h2>
-          <p className="text-xl opacity-80 mb-14 max-w-2xl mx-auto font-medium relative z-10">
-            Você traz o sonho, nós trazemos a engenharia. Orçamentos transparentes e prazos que funcionam.
-          </p>
-          <button 
-            onClick={() => onNavigate('contact')}
-            className="bg-white text-indigo-900 px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-[0.2em] hover:scale-110 hover:shadow-2xl hover:shadow-white/20 transition-all relative z-10"
-          >
-            Falar com um especialista agora
-          </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {DEVELOI_PROJECTS.slice(0, 2).map((p) => (
+              <div key={p.id} className="reveal group cursor-pointer" onClick={() => onNavigate('solutions')}>
+                <div className="relative overflow-hidden rounded-[40px] mb-6 aspect-video">
+                  <img src={p.imageUrl} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                    <div className="flex gap-3">
+                      {p.techStack.slice(0, 2).map(t => (
+                        <span key={t} className="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-[8px] font-black text-white uppercase">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="px-4">
+                  <h3 className="text-2xl font-black mb-2 text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">{p.title}</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-1">{p.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="max-w-5xl mx-auto px-6 mb-24 reveal">
+        <div className="modern-card p-12 md:p-20 bg-indigo-600 text-white border-none relative overflow-hidden text-center">
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
+              Vamos construir o futuro?
+            </h2>
+            <button 
+              onClick={() => onNavigate('contact')}
+              className="bg-white text-indigo-900 px-12 py-5 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:scale-105 transition-all"
+            >
+              Falar com nossa equipe
+            </button>
+          </div>
         </div>
       </section>
     </div>

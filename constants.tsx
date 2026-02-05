@@ -9,14 +9,25 @@ import {
   Store,
   Calendar,
   ShieldCheck,
-  MessageCircle
+  MessageCircle,
+  Cpu,
+  Globe,
+  Lock,
+  Zap
 } from 'lucide-react';
 
 export const COMPANY_STATS = [
-  { label: 'Projetos com Sucesso', value: '124', sub: 'Histórias reais' },
-  { label: 'Satisfeitos', value: '98%', sub: 'Nossa maior nota' },
-  { label: 'Suporte Humano', value: 'Sim', sub: 'Gente falando com gente' },
-  { label: 'Custo Justo', value: 'R$', sub: 'Cabe no seu planejamento' }
+  { label: 'Projetos Ativos', value: '142', sub: 'Em 12 países' },
+  { label: 'Linhas de Código', value: '2.4M', sub: 'Sustentando negócios' },
+  { label: 'Uptime de Sistemas', value: '99.9%', sub: 'SLA Garantido' },
+  { label: 'Satisfação', value: '5/5', sub: 'Feedback real' }
+];
+
+export const TECHNICAL_CAPABILITIES = [
+  { title: 'Frontend Architecture', tools: 'React, Next.js, Framer, Tailwind', icon: <Globe className="w-5 h-5" /> },
+  { title: 'Backend Systems', tools: 'Node.js, Go, Python, PostgreSQL', icon: <Cpu className="w-5 h-5" /> },
+  { title: 'Cloud Infrastructure', tools: 'AWS, GCP, Azure, Docker, K8s', icon: <Zap className="w-5 h-5" /> },
+  { title: 'Security & Privacy', tools: 'OAuth2, AES-256, LGPD Compliance', icon: <Lock className="w-5 h-5" /> }
 ];
 
 export const DEVELOI_PROJECTS: Project[] = [
@@ -107,28 +118,5 @@ export const DEVELOI_PROJECTS: Project[] = [
       { label: 'Preço', value: 'Justo', sub: 'Mensalidade amiga' }
     ],
     fullCase: 'Ideal para quem está começando e quer vender online sem pagar taxas absurdas de marketplaces.'
-  }
-];
-
-export const DEVELOI_SERVICES: Service[] = [
-  {
-    title: 'Seu Site Profissional',
-    description: 'Sites que carregam rápido e funcionam em qualquer celular. Sua vitrine digital para o mundo.',
-    icon: <Store className="w-8 h-8" />
-  },
-  {
-    title: 'Sistemas que Ajudam',
-    description: 'Criamos ferramentas para organizar seu estoque, agenda ou financeiro. Chega de planilhas difíceis!',
-    icon: <Calendar className="w-8 h-8" />
-  },
-  {
-    title: 'Automação Simples',
-    description: 'Robôs que respondem seu WhatsApp ou enviam e-mails. Você ganha tempo para o que importa.',
-    icon: <MessageCircle className="w-8 h-8" />
-  },
-  {
-    title: 'Segurança & Nuvem',
-    description: 'Seus dados guardados com as melhores travas do mundo. Tranquilidade para você e seus clientes.',
-    icon: <ShieldCheck className="w-8 h-8" />
   }
 ];

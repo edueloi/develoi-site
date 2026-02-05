@@ -4,21 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Develoi | Tecnologia Amiga e Acessível</title>
+    <title>Develoi | Engenharia & Design de Elite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-main: #ffffff;
             --bg-card: #ffffff;
-            --text-main: #0f172a;
+            --text-main: #020617;
             --text-muted: #64748b;
             --accent: #4f46e5;
-            --accent-glow: rgba(79, 70, 229, 0.15);
+            --accent-soft: rgba(79, 70, 229, 0.05);
             --border: #f1f5f9;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
-            --shadow-md: 0 20px 40px -15px rgba(0,0,0,0.05);
-            --shadow-lg: 0 30px 60px -12px rgba(0,0,0,0.08);
         }
 
         .dark-theme {
@@ -27,11 +24,8 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --accent: #818cf8;
-            --accent-glow: rgba(129, 140, 248, 0.1);
+            --accent-soft: rgba(129, 140, 248, 0.05);
             --border: rgba(255, 255, 255, 0.05);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
-            --shadow-md: 0 20px 40px -15px rgba(0,0,0,0.4);
-            --shadow-lg: 0 30px 60px -12px rgba(0,0,0,0.5);
         }
         
         body {
@@ -40,77 +34,95 @@
             color: var(--text-main);
             scroll-behavior: smooth;
             overflow-x: hidden;
-            transition: background-color 0.5s ease;
+            transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Ambient Background Blobs */
-        .blob {
+        /* Mesh Gradient Background */
+        .mesh-bg {
             position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: -1;
-            filter: blur(80px);
-            animation: float 20s infinite alternate;
-        }
-
-        @keyframes float {
-            0% { transform: translate(-10%, -10%) scale(1); }
-            100% { transform: translate(20%, 20%) scale(1.1); }
+            background-color: var(--bg-main);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            opacity: 0.05;
+            filter: blur(100px);
         }
 
         .modern-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 40px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 48px;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .modern-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
             border-color: var(--accent);
+            box-shadow: 0 40px 80px -20px rgba(0,0,0,0.08);
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .reveal.active {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateY(0);
         }
 
-        .btn-modern {
+        .btn-premium {
             background: var(--accent);
             color: white;
-            padding: 18px 36px;
-            border-radius: 20px;
+            padding: 20px 40px;
+            border-radius: 24px;
             font-weight: 800;
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px -5px var(--accent-glow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-modern:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 20px 40px -10px var(--accent-glow);
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-premium:hover::before {
+            left: 100%;
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%, #8b5cf6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Remove the old grid classes */
-        .bg-grid { background-image: none !important; }
+        /* Ticker Animation */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite;
+        }
     </style>
 <script type="importmap">
 {
@@ -125,8 +137,7 @@
 </script>
 </head>
 <body>
-    <div class="blob" style="top: -100px; left: -100px;"></div>
-    <div class="blob" style="bottom: -100px; right: -100px; animation-delay: -5s;"></div>
+    <div class="mesh-bg"></div>
     <div id="root"></div>
 </body>
 </html>
