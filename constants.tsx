@@ -3,115 +3,132 @@ import React from 'react';
 import { Project, Service } from './types';
 import { 
   Code, 
-  BarChart3, 
-  Lock
+  Users, 
+  Smartphone,
+  Heart,
+  Store,
+  Calendar,
+  ShieldCheck,
+  MessageCircle
 } from 'lucide-react';
+
+export const COMPANY_STATS = [
+  { label: 'Projetos com Sucesso', value: '124', sub: 'Histórias reais' },
+  { label: 'Satisfeitos', value: '98%', sub: 'Nossa maior nota' },
+  { label: 'Suporte Humano', value: 'Sim', sub: 'Gente falando com gente' },
+  { label: 'Custo Justo', value: 'R$', sub: 'Cabe no seu planejamento' }
+];
 
 export const DEVELOI_PROJECTS: Project[] = [
   {
     id: 'nr-pro',
-    title: 'Develoi NR1 Pro',
-    description: 'Gestão de conformidade focada em Saúde Ocupacional e Psicologia do Trabalho (NR1). Digitalize o PGR e gerencie riscos psicossociais.',
+    title: 'Develoi Saúde Digital',
+    description: 'Transformamos a burocracia das leis de saúde em um sistema simples que qualquer funcionário consegue usar no celular.',
     category: 'Indústria',
     imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200',
-    link: 'https://develoi.com/',
+    link: '#',
     features: [
-      'Avaliação de Riscos Psicossociais (NR1)',
-      'Gestão de Treinamentos EAD Integrada',
-      'Assinatura Digital ICP-Brasil',
-      'Dashboards de Saúde Ocupacional'
+      'Documentos em PDF automáticos',
+      'Treinamentos por vídeo curtos',
+      'Aviso de vencimento de exames',
+      'Suporte via WhatsApp'
     ],
-    tags: ['NR1', 'Compliance', 'Saúde Mental'],
-    techStack: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
+    tags: ['Simplicidade', 'Saúde', 'Trabalho'],
+    techStack: ['Web', 'Mobile'],
     metrics: [
-      { label: 'Conformidade', value: '100%', sub: 'Audit Ready' },
-      { label: 'Processamento', value: '<150ms', sub: 'Latência Real' },
-      { label: 'Cloud Uptime', value: '99.9%', sub: 'AWS Managed' }
+      { label: 'Uso Diário', value: 'Alta', sub: 'Fácil de usar' },
+      { label: 'Economia', value: '40%', sub: 'Menos papel' },
+      { label: 'Configuração', value: '1 dia', sub: 'Muito rápido' }
     ],
-    fullCase: 'O NR1 Pro é a solução definitiva para empresas que precisam gerenciar o inventário de riscos e a saúde mental dos colaboradores, unindo psicologia organizacional com conformidade técnica rigorosa.'
+    fullCase: 'Um sistema focado em empresas que não querem perder tempo com computadores complicados.'
   },
   {
     id: 'psimanager',
-    title: 'PsiManager Pro',
-    description: 'Ecossistema completo para clínicas de psicologia. Prontuário eletrônico com IA e segurança nível bancário.',
+    title: 'Meu Consultório Digital',
+    description: 'Um cantinho seguro para psicólogos e terapeutas organizarem seus horários e prontuários com total privacidade.',
     category: 'Saúde',
     imageUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200',
-    link: 'https://psi.develoi.com/',
+    link: '#',
     features: [
-      'Prontuário Criptografado (AES-256)',
-      'Assistente IA para Anamnese',
-      'Faturamento TISS/TUSS Automático',
-      'Teleconsulta HD Privada'
+      'Agenda inteligente',
+      'Prontuário com senha',
+      'Lembrete automático para o paciente',
+      'Controle de pagamentos fácil'
     ],
-    tags: ['Psicologia', 'Privacidade', 'IA'],
-    techStack: ['Next.js', 'Python', 'OpenAI API', 'MongoDB'],
+    tags: ['Cuidado', 'Saúde', 'Segurança'],
+    techStack: ['Web App'],
     metrics: [
-      { label: 'Segurança', value: 'AES-256', sub: 'End-to-End' },
-      { label: 'Economia', value: '15h/mês', sub: 'Admin' },
-      { label: 'Retenção', value: '88%', sub: 'Pacientes' }
+      { label: 'Paz', value: 'Total', sub: 'Sem esquecimentos' },
+      { label: 'Fidelidade', value: '+30%', sub: 'Pelos lembretes' },
+      { label: 'Segurança', value: 'LGPD', sub: 'Dados protegidos' }
     ],
-    fullCase: 'O PsiManager revolucionou clínicas de psicologia ao automatizar a burocracia do faturamento e oferecer uma IA que auxilia terapeutas na organização de insights clínicos.'
+    fullCase: 'Feito para quem cuida de pessoas. O sistema é leve, bonito e não exige curso para aprender.'
   },
   {
     id: 'salao-develoi',
-    title: 'Develoi Salão',
-    description: 'Gestão de alta performance para salões e clínicas de estética. Agendamento inteligente e controle financeiro total.',
+    title: 'Gestão para Estética & Beleza',
+    description: 'Ajude seu salão ou barbearia a crescer. Seus clientes agendam sozinhos e você foca no seu talento.',
     category: 'Beleza',
     imageUrl: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1200',
-    link: 'https://salao.develoi.com/',
+    link: '#',
     features: [
-      'Agendamento Online via WhatsApp',
-      'Comissionamento Automático de Profissionais',
-      'Controle de Estoque e Insumos',
-      'Marketing de Fidelização Integrado'
+      'Link de agendamento próprio',
+      'Controle de estoque de produtos',
+      'Cálculo de comissão automático',
+      'Galeria de fotos do trabalho'
     ],
-    tags: ['Estética', 'Agendamento', 'ERP'],
-    techStack: ['Flutter', 'Firebase', 'Stripe', 'Node.js'],
+    tags: ['Beleza', 'Crescimento', 'Prático'],
+    techStack: ['Celular'],
     metrics: [
-      { label: 'Crescimento', value: '+35%', sub: 'No Faturamento' },
-      { label: 'No-Show', value: '-60%', sub: 'Lembretes IA' },
-      { label: 'Setup', value: '48h', sub: 'Migração Rápida' }
+      { label: 'Tempo', value: 'Livre', sub: 'Sem atender telefone' },
+      { label: 'Vendas', value: '+25%', sub: 'Mais organização' },
+      { label: 'Investimento', value: 'Baixo', sub: 'Acessível' }
     ],
-    fullCase: 'Desenvolvido para grandes redes de estética, o Develoi Salão centraliza a gestão de múltiplas unidades em uma única interface intuitiva e potente.'
+    fullCase: 'Tudo o que uma dona de salão precisa para profissionalizar seu negócio hoje mesmo.'
   },
   {
-    id: 'pilaflex',
-    title: 'Pilaflex Studio',
-    description: 'A inteligência por trás dos maiores estúdios de Pilates. Gestão de alunos e avaliação física digital.',
-    category: 'Saúde',
-    imageUrl: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80&w=1200',
-    link: 'https://pilaflex.develoi.com/',
+    id: 'e-com-simples',
+    title: 'Loja no WhatsApp',
+    description: 'Venda seus produtos direto pelo WhatsApp com um catálogo organizado e pagamentos fáceis.',
+    category: 'Serviços',
+    imageUrl: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200',
+    link: '#',
     features: [
-      'Avaliação Postural por Visão Computacional',
-      'Pagamento Recorrente (Credit Card)',
-      'Controle de Acessos via QR Code',
-      'App do Aluno com Treinos em Vídeo'
+      'Catálogo com fotos',
+      'Carrinho de compras',
+      'Integração com PIX',
+      'Gestão de pedidos'
     ],
-    tags: ['Pilates', 'Recorrência', 'HealthTech'],
-    techStack: ['React Native', 'Firebase', 'Node.js', 'Redis'],
+    tags: ['Vendas', 'WhatsApp', 'Pequeno Negócio'],
+    techStack: ['Mobile-First'],
     metrics: [
-      { label: 'Retenção', value: '94%', sub: 'LTV Elevado' },
-      { label: 'Automação', value: '85%', sub: 'Financeiro' },
-      { label: 'Acessos', value: '10k+', sub: 'Alunos Ativos' }
+      { label: 'Conversão', value: 'Alta', sub: 'Vende sozinho' },
+      { label: 'Praticidade', value: '100%', sub: 'Tudo no Whats' },
+      { label: 'Preço', value: 'Justo', sub: 'Mensalidade amiga' }
     ],
-    fullCase: 'Um ecossistema completo que integra aplicativo móvel para alunos e dashboard administrativo para proprietários.'
+    fullCase: 'Ideal para quem está começando e quer vender online sem pagar taxas absurdas de marketplaces.'
   }
 ];
 
 export const DEVELOI_SERVICES: Service[] = [
   {
-    title: 'Desenvolvimento Sob Medida',
-    description: 'Sistemas que se moldam ao seu negócio, não o contrário. Escalabilidade garantida.',
-    icon: <Code className="w-8 h-8 text-blue-600" />
+    title: 'Seu Site Profissional',
+    description: 'Sites que carregam rápido e funcionam em qualquer celular. Sua vitrine digital para o mundo.',
+    icon: <Store className="w-8 h-8" />
   },
   {
-    title: 'Consultoria Estratégica',
-    description: 'Diagnóstico tecnológico para redução de custos e otimização de infraestrutura.',
-    icon: <BarChart3 className="w-8 h-8 text-indigo-600" />
+    title: 'Sistemas que Ajudam',
+    description: 'Criamos ferramentas para organizar seu estoque, agenda ou financeiro. Chega de planilhas difíceis!',
+    icon: <Calendar className="w-8 h-8" />
   },
   {
-    title: 'Segurança & LGPD',
-    description: 'Blindagem de dados sensíveis e adequação total às normas brasileiras.',
-    icon: <Lock className="w-8 h-8 text-emerald-600" />
+    title: 'Automação Simples',
+    description: 'Robôs que respondem seu WhatsApp ou enviam e-mails. Você ganha tempo para o que importa.',
+    icon: <MessageCircle className="w-8 h-8" />
+  },
+  {
+    title: 'Segurança & Nuvem',
+    description: 'Seus dados guardados com as melhores travas do mundo. Tranquilidade para você e seus clientes.',
+    icon: <ShieldCheck className="w-8 h-8" />
   }
 ];
