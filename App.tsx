@@ -24,7 +24,8 @@ const App: React.FC = () => {
     };
 
     updateObserver();
-    const timeoutId = setTimeout(updateObserver, 100);
+    // Re-run observer when content changes
+    const timeoutId = setTimeout(updateObserver, 150);
 
     return () => {
       clearTimeout(timeoutId);
@@ -41,7 +42,6 @@ const App: React.FC = () => {
     };
     window.addEventListener('popstate', handlePopState);
     
-    // Check initial hash
     const initialHash = window.location.hash.replace('#', '');
     if (initialHash && ['home', 'services', 'solutions', 'about', 'contact'].includes(initialHash)) {
       setCurrentPage(initialHash);
@@ -52,7 +52,7 @@ const App: React.FC = () => {
 
   const navigate = (page: string) => {
     setCurrentPage(page);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'auto' });
     window.history.pushState(null, '', `#${page}`);
   };
 
@@ -60,7 +60,7 @@ const App: React.FC = () => {
     switch (currentPage) {
       case 'home': return <Home onNavigate={navigate} />;
       case 'services': return <Services onNavigate={navigate} />;
-      case 'solutions': return <Solutions />;
+      case 'solutions': return <Solutions onNavigate={navigate} />;
       case 'about': return <About />;
       case 'contact': return <Contact />;
       default: return <Home onNavigate={navigate} />;

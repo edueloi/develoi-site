@@ -163,4 +163,36 @@ const Services: React.FC<Props> = ({ onNavigate }) => {
         {/* Special Maintenance Callout */}
         <div className="mt-48 relative reveal">
           <div className="absolute inset-0 bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
-          <div className="relative glass-premium p-12 md:p-24 rounded-[
+          <div className="relative glass-premium p-12 md:p-24 rounded-[64px] border-white/10 text-center">
+            <RefreshCcw className="w-16 h-16 text-blue-500 mx-auto mb-10 animate-spin-slow" />
+            <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-8 leading-none">
+              Seu sistema antigo <br />precisa de vida nova?
+            </h2>
+            <p className="text-slate-400 text-lg md:text-2xl mb-16 max-w-2xl mx-auto font-medium">
+              Realizamos modernização de código legado, refatoração de banco de dados e migração para Cloud de alta performance.
+            </p>
+            <button 
+              onClick={() => onNavigate('contact')}
+              className="px-16 py-8 bg-blue-600 text-white rounded-3xl font-black text-xs uppercase tracking-[0.4em] hover:scale-105 transition-all shadow-2xl shadow-blue-600/20"
+            >
+              Falar com Engenheiro de Infra
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <style>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 12s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Services;
