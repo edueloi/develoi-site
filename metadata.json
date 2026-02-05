@@ -1,0 +1,7 @@
+{
+  "name": "Develoi - Hub de Soluções Tecnológicas",
+  "description": "Software House premium focada em sistemas de alta performance, conformidade NR10 e gestão clínica.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
